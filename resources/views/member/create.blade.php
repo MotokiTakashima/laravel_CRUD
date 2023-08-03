@@ -1,6 +1,6 @@
 <h1>新規作成</h1>
 
-<form method="POST" action="">
+<form method="POST" action="{{route('member.store')}}">
   @csrf
 
   <div>

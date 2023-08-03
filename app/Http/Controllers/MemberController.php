@@ -35,7 +35,16 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $member=new Member;
+
+        $member->name=$request->input('name');
+        $member->telephone=$request->input('telephone');
+        $member->email=$request->input('email');
+
+        $member->save();
+
+        //一覧画面にリダイレクト
+        return redirect()->route('member.index');
     }
 
     /**

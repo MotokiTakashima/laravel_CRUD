@@ -18,3 +18,4 @@ Route::get('/index', [MemberController::class, 'index'])->name('member.index');
 
 Route::get('/create', [MemberController::class, 'create'])->name('member.create');
 
+Route::post('/store', [MemberController::class, 'store'])->name('member.store');
