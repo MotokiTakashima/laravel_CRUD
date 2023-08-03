@@ -14,8 +14,14 @@ use App\Http\Controllers\MemberController;
 |
 */
 
+// 一覧画面
 Route::get('/index', [MemberController::class, 'index'])->name('member.index');
 
+// 登録画面
 Route::get('/create', [MemberController::class, 'create'])->name('member.create');
 
+// 登録画面
 Route::post('/store', [MemberController::class, 'store'])->name('member.store');
+
+// 詳細画面
+Route::get('/show/{id}', [MemberController::class, 'show'])->name('member.show');
