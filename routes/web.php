@@ -31,3 +31,6 @@ Route::get('/edit/{id}', [MemberController::class, 'edit'])->name('member.edit')
 
 // 更新処理
 Route::post('/update/{id}', [MemberController::class, 'update'])->name('member.update');
+
+// 削除処理
+Route::post('/destroy/{id}', [MemberController::class, 'destroy'])->name('member.destroy');
