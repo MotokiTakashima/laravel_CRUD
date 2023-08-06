@@ -20,7 +20,7 @@ Route::get('/index', [MemberController::class, 'index'])->name('member.index');
 // 登録画面
 Route::get('/create', [MemberController::class, 'create'])->name('member.create');
 
-// 登録画面
+// 登録処理
 Route::post('/store', [MemberController::class, 'store'])->name('member.store');
 
 // 詳細画面
@@ -28,3 +28,6 @@ Route::get('/show/{id}', [MemberController::class, 'show'])->name('member.show')
 
 // 編集画面
 Route::get('/edit/{id}', [MemberController::class, 'edit'])->name('member.edit');
+
+// 更新処理
+Route::post('/update/{id}', [MemberController::class, 'update'])->name('member.update');

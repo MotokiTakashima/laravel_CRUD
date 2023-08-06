@@ -72,7 +72,16 @@ class MemberController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $member = Member::find($id);
+
+        $member->name = $request->input('name');
+        $member->telephone = $request->input('telephone');
+        $member->email = $request->input('email');
+
+        $member->save();
+
+        //一覧画面にリダイレクト
+        return redirect()->route('member.index');
     }
 
     /**
