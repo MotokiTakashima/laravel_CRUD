@@ -25,3 +25,6 @@ Route::post('/store', [MemberController::class, 'store'])->name('member.store');
 
 // 詳細画面
 Route::get('/show/{id}', [MemberController::class, 'show'])->name('member.show');
+
+// 編集画面
+Route::get('/edit/{id}', [MemberController::class, 'edit'])->name('member.edit');
