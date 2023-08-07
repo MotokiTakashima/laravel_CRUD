@@ -1,16 +1,24 @@
 <h1>新規作成</h1>
-
+@if ($errors->any())
+<div>
+  <ul>
+    @foreach ($errors->all() as $error)
+    <li>{{ $error }}</li>
+    @endforeach
+  </ul>
+</div>
+@endif
 <form method="POST" action="{{route('member.store')}}">
   @csrf
 
   <div>
     <label for="form-name">名前</label>
-    <input type="text" name="name" id="form-name" required>
+    <input type="text" name="name" id="form-name">
   </div>
 
   <div>
     <label for="form-tel">電話番号</label>
-    <input type="tel" name="telephone" id="form-tel">
+    <input type="tel" name="telephone" id="form-tel" required>
   </div>
 
   <div>

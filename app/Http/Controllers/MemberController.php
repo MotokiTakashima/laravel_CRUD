@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Member;
+use App\Http\Requests\memberCreateRequest;
 
 class MemberController extends Controller
 {
@@ -33,7 +34,7 @@ class MemberController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(memberCreateRequest $request)
     {
         $member=new Member;
 
