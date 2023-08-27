@@ -18,7 +18,7 @@
 
   <div>
     <label for="form-tel">電話番号</label>
-    <input type="tel" name="telephone" id="form-tel" required>
+    <input type="tel" name="telephone" id="form-tel">
   </div>
 
   <div>
