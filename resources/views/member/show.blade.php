@@ -6,8 +6,8 @@
 </div>
 
 <div>
-電話番号
-{{$member->telephone}}
+パスワード
+{{$member->password}}
 </div>
 
 <div>

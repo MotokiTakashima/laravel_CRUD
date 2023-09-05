@@ -17,8 +17,8 @@
   </div>
 
   <div>
-    <label for="form-tel">電話番号</label>
-    <input type="tel" name="telephone" id="form-tel">
+    <label for="form-tel">パスワード</label>
+    <input type="tel" name="password" id="form-tel">
   </div>
 
   <div>

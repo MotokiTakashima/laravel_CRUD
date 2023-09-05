@@ -16,7 +16,7 @@ class MemberController extends Controller
     {
         //memberテーブルからname,telephone,emailを$membersに格納
         $members=DB::table('members')
-            ->select('id', 'name', 'telephone', 'email')
+            ->select('id', 'name', 'password', 'email')
             ->get();
 
         //viewを返す(compactでviewに$membersを渡す)
@@ -39,7 +39,7 @@ class MemberController extends Controller
         $member=new Member;
 
         $member->name=$request->input('name');
-        $member->telephone=$request->input('telephone');
+        $member->password=$request->input('password');
         $member->email=$request->input('email');
 
         $member->save();
@@ -76,7 +76,7 @@ class MemberController extends Controller
         $member = Member::find($id);
 
         $member->name = $request->input('name');
-        $member->telephone = $request->input('telephone');
+        $member->password = $request->input('password');
         $member->email = $request->input('email');
 
         $member->save();

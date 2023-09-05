@@ -9,8 +9,8 @@
   </div>
 
   <div>
-  電話番号
-  <input type="text" name=telephone value="{{$member->telephone}}">
+  パスワード
+  <input type="text" name=password value="{{$member->password}}">
   </div>
 
   <div>

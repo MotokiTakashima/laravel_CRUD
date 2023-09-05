@@ -23,7 +23,7 @@ class memberCreateRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'telephone' => 'required',
+            'password' => 'required',
             'email' => 'required'
         ];
     }
@@ -32,7 +32,7 @@ class memberCreateRequest extends FormRequest
     {
         return [
             'name.required' => '名前を入力してください。',
-            'telephone.required' => '電話番号を入力してください。',
+            'password.required' => 'パスワードを入力してください。',
             'email.required' => 'メールアドレスを入力してください。'
         ];
     }
