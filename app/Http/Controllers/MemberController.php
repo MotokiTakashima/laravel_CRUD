@@ -6,9 +6,37 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Member;
 use App\Http\Requests\memberCreateRequest;
+use Illuminate\Support\Facades\Auth;
 
 class MemberController extends Controller
 {
+
+    public function showRegister()
+    {
+        return view('register');
+    }
+
+    public function showLogin()
+   {
+       return view('login');
+   }
+
+   public function login(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('profile');
+        }
+
+        return back();
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -43,6 +71,8 @@ class MemberController extends Controller
         $member->email=$request->input('email');
 
         $member->save();
+
+        Auth::login($member);
 
         //一覧画面にリダイレクト
         return redirect()->route('member.index');

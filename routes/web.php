@@ -13,9 +13,18 @@ use App\Http\Controllers\MemberController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// ログイン画面
+Route::get('/login',[MemberController::class,'showLogin'])->name('login');
+
+Route::post('/login',[MemberController::class,'login']);
+
+// ユーザー登録画面
+Route::get('/register',[MemberController::class,'showRegister']);
 
 // 一覧画面
-Route::get('/index', [MemberController::class, 'index'])->name('member.index');
+Route::middleware('auth')->group(function (){
+  Route::get('/index', [MemberController::class, 'index'])->name('member.index');
+});
 
 // 登録画面
 Route::get('/create', [MemberController::class, 'create'])->name('member.create');

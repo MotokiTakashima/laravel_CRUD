@@ -8,7 +8,7 @@
 </head>
 <body>
   <h1>一覧表示</h1>
-
+  {{\Illuminate\Support\Facades\Auth::member()->name}}でログインしています。
   <table>
   <tr>
   <th>ID</th>
